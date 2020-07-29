@@ -1,0 +1,7 @@
+.vue-uploader {
+    padding: 5px 10px;
+}
+
+.item-block, .upload-block {
+    border: 1px dotted #000;
+}

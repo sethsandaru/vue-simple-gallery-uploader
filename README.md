@@ -1,21 +1,10 @@
-# simple-uploader
+# Vue Simple Image Gallery Uploader
 
-## Project setup
-```
-yarn install
-```
+Coming soon...
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## Author
+Phat Tran aka Seth Phat
 
-### Lints and fixes files
-```
-yarn run lint
-```
+## LICENSE
+MIT License
