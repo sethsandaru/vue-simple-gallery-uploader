@@ -2,6 +2,37 @@
     padding: 5px 10px;
 }
 
-.item-block, .upload-block {
-    border: 1px dotted #000;
+.vue-uploader .item-block,
+.vue-uploader .upload-block {
+    border: 3px dotted #000;
+    width: 25%;
+    float:left;
+    margin-right: 10px;
+}
+
+.vue-uploader .upload-block {
+    text-align: center;
+    cursor: pointer;
+    padding: 30px;
+}
+
+.vue-uploader .upload-block:hover {
+    border-color: #3498db;
+}
+
+.vue-uploader .item-block {
+    position: relative;
+    padding: 5px;
+}
+
+.vue-uploader .item-block img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.vue-uploader .item-block .toolbox {
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }

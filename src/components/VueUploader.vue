@@ -1,17 +1,25 @@
 <template>
     <div class="vue-uploader">
-        <ItemBlock v-for="fileInfo in value" />
+        <ItemBlock v-for="fileInfo in value"
+                   :key="fileInfo.fileId"
+                   :file-info="fileInfo"
+        />
 
-        <input type="file" v-show="false" id="vueUploadField">
+        <UploadBlock
+                :accepted-extensions="acceptedExtensions"
+                :file-rules="fileRules"
+        />
     </div>
 </template>
 
 <script>
     import ItemBlock from "./ItemBlock"
+    import UploadBlock from "@/components/UploadBlock";
 
     export default {
         name: "VueUploader",
         components: {
+            UploadBlock,
             ItemBlock
         },
         props: {
@@ -20,7 +28,7 @@
              */
             limit: {
                 type: Number,
-                default: 0
+                default: 0 // 0 => unlimited
             },
 
             /**
@@ -32,7 +40,27 @@
             formMode: {
                 type: Boolean,
                 default: false
-            }
+            },
+
+            /**
+             * attribute `accept` for input-file
+             * @default "image/jpg, image/jpeg, image/png"
+             */
+            fileRules: {
+                type: String,
+                default: "image/jpg, image/jpeg, image/png",
+            },
+
+            /**
+             * Array of Extensions you want to do upload
+             * @default ['jpg', 'png', 'jpeg']
+             */
+            acceptedExtensions: {
+                type: Array,
+                default: () => ['jpg', 'png', 'jpeg']
+            },
+
+            value: Array,
         },
 
         model: {
@@ -63,7 +91,7 @@
              */
             doChooseFile() {
                 // limit reached => can't upload anymore
-                if (this.limit <= this.value.length) {
+                if (this.limit > 0 && this.limit <= this.value.length) {
                     return;
                 }
 
