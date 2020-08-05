@@ -1,9 +1,18 @@
 <template>
     <div class="vue-uploader">
-        <ItemBlock v-for="fileInfo in value"
-                   :key="fileInfo.fileId"
-                   :file-info="fileInfo"
-        />
+        <draggable
+            :list="value"
+            ghost-class="ghost"
+            handle=".toolbox > .drag-icon"
+            class="row"
+        >
+            <ItemBlock v-for="(fileInfo, fileIndex) in value"
+                       :key="fileInfo.fileId"
+                       :file-info="fileInfo"
+                       :file-index="fileIndex"
+                       @delete="doDeleteFile"
+            />
+        </draggable>
 
         <UploadBlock
                 :accepted-extensions="acceptedExtensions"
@@ -15,12 +24,14 @@
 <script>
     import ItemBlock from "./ItemBlock"
     import UploadBlock from "@/components/UploadBlock";
+    import draggable from 'vuedraggable'
 
     export default {
         name: "VueUploader",
         components: {
             UploadBlock,
-            ItemBlock
+            ItemBlock,
+            draggable
         },
         props: {
             /**
@@ -98,6 +109,13 @@
                 this.uploaderDOM.click();
             },
 
+            /**
+             * Delete the File out of the Gallery
+             */
+            doDeleteFile(fileIndex) {
+                this.value.splice(fileIndex, 1)
+                this.setValue(this.value)
+            },
 
             /**
              * Set Value for the current state
@@ -105,7 +123,7 @@
              */
             setValue(val) {
                 this.$emit('change', val);
-            }
+            },
         },
 
         mounted() {
