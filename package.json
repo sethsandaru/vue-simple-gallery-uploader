@@ -1,11 +1,17 @@
 {
-  "name": "simple-uploader",
+  "name": "vue-simple-uploader",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "email": "phattranminh96@gmail.com",
+    "name": "Seth Phat",
+    "url": "https://github.com/sethsandaru"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-lib": "vue-cli-service build --target lib --name vue-uploader ./src/index.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",

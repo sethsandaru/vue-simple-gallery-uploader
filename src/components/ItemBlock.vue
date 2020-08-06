@@ -27,7 +27,7 @@
             </div>
 
             <div v-if="canBeShowInPreviewMode">
-                <img :src="fileInfo.fileURL"/>
+                <img class="img-responsive" :src="fileInfo.fileURL" draggable="false"/>
             </div>
             <div v-else style="padding-top:10px">
                 <div class="file-icon">
@@ -40,11 +40,11 @@
                          width="48px"
                          height="48px"
                     >
-                    <path d="M270.825,70.55L212.17,3.66C210.13,1.334,207.187,0,204.093,0H55.941C49.076,0,43.51,5.566,43.51,12.431V304.57
-                        c0,6.866,5.566,12.431,12.431,12.431h205.118c6.866,0,12.432-5.566,12.432-12.432V77.633
-                        C273.491,75.027,272.544,72.51,270.825,70.55z M55.941,305.073V12.432H199.94v63.601c0,3.431,2.78,6.216,6.216,6.216h54.903
-                        l0.006,222.824H55.941z"/>
-                </svg>
+                        <path d="M270.825,70.55L212.17,3.66C210.13,1.334,207.187,0,204.093,0H55.941C49.076,0,43.51,5.566,43.51,12.431V304.57
+                            c0,6.866,5.566,12.431,12.431,12.431h205.118c6.866,0,12.432-5.566,12.432-12.432V77.633
+                            C273.491,75.027,272.544,72.51,270.825,70.55z M55.941,305.073V12.432H199.94v63.601c0,3.431,2.78,6.216,6.216,6.216h54.903
+                            l0.006,222.824H55.941z"/>
+                    </svg>
 
                 </div>
                 <p class="text-file-name">
@@ -59,6 +59,7 @@
 
 <script>
     import {UploadedFile} from "@/classes/uploaded-file.class";
+    import {AjaxService} from "@/libraries/AjaxService";
 
     const imageExtensions = [
         'png',
@@ -76,10 +77,7 @@
                 required: true
             },
             fileIndex: Number,
-            requestAPIDelete: {
-                type: Boolean,
-                default: false,
-            }
+            endpoint: Object
         },
 
         methods: {
@@ -88,9 +86,13 @@
                     return
                 }
 
-                // TODO: Check if need to send api to delete
-                if (this.requestAPIDelete) {
-                    // TODO: request api
+                // Delete-Enpoint not empty => Run it
+                if (this.endpoint.delete !== "") {
+                    AjaxService.delete(
+                        `${this.endpoint.delete}/${this.fileInfo.fileId}`,
+                        this.removeFile,
+                        null
+                    )
                     return
                 }
 

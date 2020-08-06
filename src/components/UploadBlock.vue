@@ -26,16 +26,19 @@
 
 <script>
     import {UploadedFile} from "@/classes/uploaded-file.class";
+    import {AjaxService} from "@/libraries/AjaxService";
 
     export default {
         name: "UploadBlock",
         props: {
             fileRules: String,
-            acceptedExtensions: Array
+            acceptedExtensions: Array,
+            endpoint: Object,
         },
 
         data: () => ({
             uploaderDOM: null,
+            isUpload: false
         }),
 
         methods: {
@@ -46,6 +49,12 @@
                 // limit reached => can't upload anymore
                 if (this.limit > 0 && this.limit <= this.value.length) {
                     return;
+                }
+
+                // Single Upload Only :(
+                if (this.isUpload) {
+                    alert("There's an upload process running. Please wait...");
+                    return
                 }
 
                 this.uploaderDOM.click();
@@ -65,11 +74,21 @@
                     return this.clearFile();
                 }
 
+                // notify uploading...
+                this.$emit('uploading', file)
+                this.isUpload = true
+
                 // ok upload now
                 const uploadData = new FormData()
                 uploadData.append("file", file)
 
                 // send ajax now
+                AjaxService.postUpload(
+                    this.endpoint.upload,
+                    uploadData,
+                    this.afterUploadedFileSuccessfully,
+                    this.afterUploadFailed
+                )
             },
 
             /**
@@ -77,9 +96,11 @@
              * Emit to Parent to let Parent deal with it
              */
             afterUploadedFileSuccessfully(result) {
+                this.isUpload = false
+
                 // create new uploadedFile Instance and emit it to parent
                 const uploadedFileInfo = new UploadedFile(result.fileId, result.fileURL)
-                this.$emit('uploaded', uploadedFileInfo)
+                this.$emit('uploaded', uploadedFileInfo) // notify uploaded
                 this.clearFile()
             },
 
@@ -87,8 +108,11 @@
              * Basic Error Handling => Show Message =))
              */
             afterUploadFailed() {
-                alert(`There was an error while uploading your file. Please try again or contact our administrator to find out.`)
+                this.isUpload = false
+                this.$emit('upload-failed')
                 this.clearFile()
+
+                alert(`There was an error while uploading your file. Please try again or contact our administrator to find out.`)
             },
 
             /**

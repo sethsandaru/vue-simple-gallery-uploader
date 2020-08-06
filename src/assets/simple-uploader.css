@@ -43,6 +43,10 @@
     display: none;
 }
 
+.vue-uploader .item-block.loading {
+    opacity: 0.4;
+}
+
 .vue-uploader .item-block:hover .toolbox {
     display: block;
     background-color: #ffffff;
