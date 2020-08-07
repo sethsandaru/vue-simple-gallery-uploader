@@ -6,10 +6,24 @@ You can upload:
 - Images (had preview mode)
 - Files
 
+## Demo
+
+### Online
+Coming soon...
+
+### Image
+
+
+
 ## Built with
 - JavaScript 
 - Vue 2
 - Sortable
+
+### Styling
+I'm using Boostrap 3 (only some basic class), it would be normally fine if you're using Bootstrap (3 or 4).
+
+Next version `0.2.0`, I'll add the standalone styling version.
 
 ## Install
 Coming soon 
@@ -22,7 +36,8 @@ Feel free to make a fork and create a pull request. I'll review it.
 - Image by <a href="https://pixabay.com/users/jmexclusives-10518280/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5187243">Joseph Mucira</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5187243">Pixabay</a>
 - Image by <a href="https://pixabay.com/users/LUM3N-1066559/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2303851">LUM3N</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2303851">Pixabay</a>
 
-Thanks for great works.
+Thanks all for great works.
+
 ## LICENSE
 MIT License
 

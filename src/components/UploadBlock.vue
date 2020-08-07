@@ -128,7 +128,3 @@
         },
     }
 </script>
-
-<style scoped>
-
-</style>
