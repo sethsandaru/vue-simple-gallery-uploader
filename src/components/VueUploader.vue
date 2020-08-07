@@ -108,7 +108,7 @@
             endpoint: {
                 type: Object,
                 default: () => ({
-                    upload: "",
+                    upload: "http://localhost:3000/api/upload",
                     delete: ""
                 })
             },

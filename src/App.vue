@@ -1,6 +1,12 @@
 <template>
     <div id="app">
         <h1>Vue Uploader UI</h1>
+
+        <div class="btn-group">
+            <button class="btn btn-success" @click="setNew">New Instance</button>
+            <button class="btn btn-danger" @click="setOldFiles">Old Gallery</button>
+        </div>
+
         <VueUploader v-model="oldFiles" />
     </div>
 </template>
@@ -18,15 +24,21 @@
             oldFiles: [],
         }),
 
-        created() {
-            const file1 = new UploadedFile(1, `https://vignette.wikia.nocookie.net/kamenrider/images/b/b7/Fumikababa.jpg`);
-            const file2 = new UploadedFile(2, `https://www.dkoding.in/wp-content/uploads/covidiots-19-mia-khalifa-dkoding-.jpg`);
-            const file3 = new UploadedFile(3, `https://www.dkoding.in/wp-content/uploads/covidiots-19-mia-khalifa-dkoding-.pp`);
-            const file4 = new UploadedFile(4, `https://www.dkoding.in/wp-content/uploads/covidiots-19-mia-khalifa-dkoding-.pp`);
-            const file5 = new UploadedFile(5, `https://www.dkoding.in/wp-content/uploads/covidiots-19-mia-khalifa-dkoding-.pp`);
+        methods: {
+            setNew() {
+                this.$set(this, 'oldFiles', [])
+            },
+            setOldFiles() {
+                this.setNew()
 
-            this.oldFiles.push(file1, file2, file3, file4, file5)
-        }
+                const file1 = new UploadedFile(1, `https://i.imgur.com/XDMSNPi.jpg`);
+                const file2 = new UploadedFile(2, `https://i.imgur.com/BlznTkg.png`);
+                const file3 = new UploadedFile(3, `https://i.imgur.com/cLFpPo0.jpg`);
+                const file4 = new UploadedFile(4, `https://localhost/file.php`);
+
+                this.oldFiles.push(file1, file2, file3, file4)
+            },
+        },
     }
 </script>
 
