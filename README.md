@@ -37,7 +37,7 @@ npm i vue-simple-gallery-uploader
 Pick up the latest build in the [Release](https://github.com/sethsandaru/vue-simple-gallery-uploader/releases) page.
 
 ```html
-<link href="simple-uploader.min.css" rel="stylesheet">
+<link href="vue-uploader.css" rel="stylesheet">
 
 <script src="vue.min.js"></script>
 <script src="vue-uploader.umd.min.js"></script>

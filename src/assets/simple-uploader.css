@@ -1,1 +1,63 @@
-.vue-uploader{padding:5px 10px}.ghost{opacity:.5;background:#c8ebfb}.vue-uploader .item-block,.vue-uploader .upload-block{border:3px dotted #000;margin-top:10px}.vue-uploader .upload-block{text-align:center;cursor:pointer;padding:30px 0;width:100%}.vue-uploader .upload-block:hover{border-color:#3498db}.vue-uploader .item-block{position:relative;padding:5px;height:220px}.vue-uploader .item-block img{width:100%;max-height:200px;object-fit:cover}.vue-uploader .item-block .toolbox{position:absolute;right:5px;top:5px;display:none}.vue-uploader .item-block.loading{opacity:.4}.vue-uploader .item-block:hover .toolbox{display:block;background-color:#fff;padding:5px 5px}.vue-uploader .item-block .toolbox>.drag-icon{cursor:move;margin-right:10px}.vue-uploader .item-block .toolbox>.delete-icon{cursor:pointer}.vue-uploader .item-block .toolbox>.delete-icon:hover{fill:red}.vue-uploader .file-icon{float:left;padding-right:10px;padding-bottom:10px}.vue-uploader .text-file-name{font-size:16px}
+.vue-uploader {
+    padding: 5px 10px;
+}
+.ghost {
+    opacity: 0.5;
+    background: #c8ebfb;
+}
+.vue-uploader .item-block,
+.vue-uploader .upload-block {
+    border: 3px dotted #000;
+    margin-top: 10px;
+}
+.vue-uploader .upload-block {
+    text-align: center;
+    cursor: pointer;
+    padding: 30px 0;
+    width: 100%;
+}
+.vue-uploader .upload-block:hover {
+    border-color: #3498db;
+}
+.vue-uploader .item-block {
+    position: relative;
+    padding: 5px;
+    height: 220px;
+}
+.vue-uploader .item-block img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+.vue-uploader .item-block .toolbox {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: none;
+}
+.vue-uploader .item-block.loading {
+    opacity: 0.4;
+}
+.vue-uploader .item-block:hover .toolbox {
+    display: block;
+    background-color: #fff;
+    padding: 5px 5px;
+}
+.vue-uploader .item-block .toolbox > .drag-icon {
+    cursor: move;
+    margin-right: 10px;
+}
+.vue-uploader .item-block .toolbox > .delete-icon {
+    cursor: pointer;
+}
+.vue-uploader .item-block .toolbox > .delete-icon:hover {
+    fill: red;
+}
+.vue-uploader .file-icon {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.vue-uploader .text-file-name {
+    font-size: 16px;
+}

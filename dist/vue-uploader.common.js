@@ -164,6 +164,13 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 /***/ }),
 
+/***/ "0a26":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "0d58":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -226,12 +233,12 @@ module.exports = __webpack_require__("9e1e") ? Object.defineProperties : functio
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"40526abe-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueUploader.vue?vue&type=template&id=b259e284&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-uploader"},[_c('draggable',{staticClass:"row",attrs:{"list":_vm.value,"ghost-class":"ghost","handle":".toolbox > .drag-icon"}},[_vm._l((_vm.value),function(fileInfo,fileIndex){return _c('ItemBlock',{key:fileInfo.fileId,attrs:{"file-info":fileInfo,"file-index":fileIndex,"endpoint":_vm.endpoint},on:{"delete":_vm.doDeleteFile}})}),(_vm.uploadingFile)?_c('ItemUploadingBlock',{attrs:{"file":_vm.uploadingFile}}):_vm._e()],2),_c('UploadBlock',{attrs:{"accepted-extensions":_vm.acceptedExtensions,"file-rules":_vm.fileRules,"endpoint":_vm.endpoint,"limit":_vm.limit,"total-files":_vm.value.length},on:{"uploading":_vm.handleUploadingFile,"uploaded":_vm.handleUploadedFile,"upload-failed":_vm.handleUploadFailed}}),(_vm.formMode)?_c('div',[_vm._l((_vm.value),function(fileInfo){return _c('input',{key:fileInfo.fileId,attrs:{"type":"hidden","name":"files[]"},domProps:{"value":fileInfo.fileId}})}),_vm._l((_vm.value),function(fileInfo){return _c('input',{key:fileInfo.filePath,attrs:{"type":"hidden","name":"urls[]"},domProps:{"value":fileInfo.filePath}})})],2):_vm._e()],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"40526abe-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueUploader.vue?vue&type=template&id=6b6fd978&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-uploader"},[_c('draggable',{staticClass:"row",attrs:{"list":_vm.value,"ghost-class":"ghost","handle":".toolbox > .drag-icon"}},[_vm._l((_vm.value),function(fileInfo,fileIndex){return _c('ItemBlock',{key:fileInfo.fileId,attrs:{"file-info":fileInfo,"file-index":fileIndex,"endpoint":_vm.endpoint},on:{"delete":_vm.doDeleteFile}})}),(_vm.uploadingFile)?_c('ItemUploadingBlock',{attrs:{"file":_vm.uploadingFile}}):_vm._e()],2),_c('UploadBlock',{attrs:{"accepted-extensions":_vm.acceptedExtensions,"file-rules":_vm.fileRules,"endpoint":_vm.endpoint,"limit":_vm.limit,"total-files":_vm.value.length},on:{"uploading":_vm.handleUploadingFile,"uploaded":_vm.handleUploadedFile,"upload-failed":_vm.handleUploadFailed}}),(_vm.formMode)?_c('div',[_vm._l((_vm.value),function(fileInfo){return _c('input',{key:fileInfo.fileId,attrs:{"type":"hidden","name":"files[]"},domProps:{"value":fileInfo.fileId}})}),_vm._l((_vm.value),function(fileInfo){return _c('input',{key:fileInfo.fileURL,attrs:{"type":"hidden","name":"urls[]"},domProps:{"value":fileInfo.fileURL}})})],2):_vm._e()],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VueUploader.vue?vue&type=template&id=b259e284&
+// CONCATENATED MODULE: ./src/components/VueUploader.vue?vue&type=template&id=6b6fd978&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -7987,9 +7994,12 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var _components_VueUploader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("1560");
+/* harmony import */ var _assets_simple_uploader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("0a26");
+/* harmony import */ var _assets_simple_uploader_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_simple_uploader_css__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * Vue Uploader main file
  */
+
 
 /**
  * Register for browser

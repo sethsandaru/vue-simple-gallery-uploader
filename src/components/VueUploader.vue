@@ -41,10 +41,10 @@
             >
 
             <input v-for="fileInfo in value"
-                   :key="fileInfo.filePath"
+                   :key="fileInfo.fileURL"
                    type="hidden"
                    name="urls[]"
-                   :value="fileInfo.filePath"
+                   :value="fileInfo.fileURL"
             >
         </div>
     </div>

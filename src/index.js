@@ -2,6 +2,7 @@
  * Vue Uploader main file
  */
 import VueUploader from "@/components/VueUploader";
+import '@/assets/simple-uploader.css';
 
 /**
  * Register for browser
