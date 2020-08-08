@@ -15,11 +15,11 @@
     "build-lib": "vue-cli-service build --target lib --name vue-uploader ./src/index.js"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10",
     "vuedraggable": "^2.24.0"
   },
   "devDependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-plugin-eslint": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
