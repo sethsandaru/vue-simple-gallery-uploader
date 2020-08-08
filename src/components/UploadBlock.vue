@@ -34,6 +34,8 @@
             fileRules: String,
             acceptedExtensions: Array,
             endpoint: Object,
+            limit: Number,
+            totalFiles: Number,
         },
 
         data: () => ({
@@ -47,7 +49,8 @@
              */
             doChooseFile() {
                 // limit reached => can't upload anymore
-                if (this.limit > 0 && this.limit <= this.value.length) {
+                if (this.limit > 0 && this.limit <= this.totalFiles) {
+                    alert("Limit reached. Can't upload more.")
                     return;
                 }
 

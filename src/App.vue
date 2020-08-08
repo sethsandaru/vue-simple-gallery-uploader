@@ -7,7 +7,7 @@
             <button class="btn btn-danger" @click="setOldFiles">Old Gallery</button>
         </div>
 
-        <VueUploader v-model="oldFiles" />
+        <VueUploader v-model="oldFiles" :limit="4" />
     </div>
 </template>
 

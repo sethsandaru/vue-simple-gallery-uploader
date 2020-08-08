@@ -58,6 +58,7 @@ AjaxService.postUpload = function (
                     'Content-Type': 'multipart/form-data'
                 }
             })
+            .then(result => result.data)
             .then(successCallback)
             .catch(errorCallback)
             break

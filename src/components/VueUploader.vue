@@ -24,6 +24,8 @@
                 :accepted-extensions="acceptedExtensions"
                 :file-rules="fileRules"
                 :endpoint="endpoint"
+                :limit="limit"
+                :total-files="value.length"
 
                 @uploading="handleUploadingFile"
                 @uploaded="handleUploadedFile"
@@ -135,23 +137,10 @@
         },
 
         data: () => ({
-            uploaderDOM: null,
             uploadingFile: null,
         }),
 
         methods: {
-            /**
-             * [CLICKED] When users clicked the "Add-More"
-             */
-            doChooseFile() {
-                // limit reached => can't upload anymore
-                if (this.limit > 0 && this.limit <= this.value.length) {
-                    return;
-                }
-
-                this.uploaderDOM.click();
-            },
-
             /**
              * Delete the File out of the Gallery
              */
@@ -194,10 +183,6 @@
             handleUploadFailed() {
                 this.uploadingFile = false
             },
-        },
-
-        mounted() {
-            this.uploaderDOM = document.getElementById('vueUploadField')
         },
     }
 </script>
