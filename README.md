@@ -109,8 +109,26 @@ After uploaded a file, Vue Simple Gallery Uploader will add a new record into th
 ]
 ```
 
-## Set
+### Set
 Yes, you need to pass in an Array of Objects like example above. Otherwise, Vue Simple Gallery Uploader will not working correctly.
+
+```html
+<vue-uploader v-model="myFiles"></vue-uploader>
+
+<script>
+    new Vue({
+        //...
+        data: {
+            myFiles: [
+                {fileId: 1, fileURL: "https://abc.com/file.jpg"},
+                {fileId: 10, fileURL: "https://abc.xyz/aaa.png"}
+                //...
+            ]
+        },
+        //...
+    })
+</script>
+```
 
 ## API Information
 Vue Simple Gallery Uploader need these REST APIs:
