@@ -90,6 +90,28 @@ Simply use it without a doubt >o<
 | acceptedExtensions | Array     | For validation purpose. To check the file's extension before upload it.<br>Default: ['jpg','jpeg','png']                                                                                                                                                                                                   |
 | endpoint           | Object    | API-Endpoint in order to Upload or Delete your image(s).<br>Must be declared like this:   <br>{<br>&emsp;    "upload": "https(s)://< your-host >/< your-path >",<br>&emsp;    "delete": "..."<br>}<br>Note: If the "delete" endpoint is empty/null => When user deleted an image, Vue-Uploader won't make any request. |
 
+## V-Model Information
+Yes, you can use `v-model` to get/set your files data. Data passed in must be an `Array` of `Object`.
+
+### Get
+After uploaded a file, Vue Simple Gallery Uploader will add a new record into the Value Array. This is what you will got:    
+```javascript
+[
+    {
+        fileId: 1,
+        fileURL: "< path >,
+    },
+    {
+        fileId: 2,
+        fileURL: " < path >"
+    },
+    //...
+]
+```
+
+## Set
+Yes, you need to pass in an Array of Objects like example above. Otherwise, Vue Simple Gallery Uploader will not working correctly.
+
 ## API Information
 Vue Simple Gallery Uploader need these REST APIs:
 - Upload
