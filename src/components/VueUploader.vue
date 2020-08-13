@@ -32,21 +32,10 @@
                 @upload-failed="handleUploadFailed"
         />
 
-        <div v-if="formMode">
-            <input v-for="fileInfo in value"
-                   :key="fileInfo.fileId"
-                   type="hidden"
-                   name="files[]"
-                   :value="fileInfo.fileId"
-            >
-
-            <input v-for="fileInfo in value"
-                   :key="fileInfo.fileURL"
-                   type="hidden"
-                   name="urls[]"
-                   :value="fileInfo.fileURL"
-            >
-        </div>
+        <FormModeInput
+            v-if="formMode"
+           :file-info-array="value"
+        />
     </div>
 </template>
 
@@ -55,10 +44,12 @@
     import UploadBlock from "@/components/UploadBlock";
     import draggable from 'vuedraggable'
     import ItemUploadingBlock from "@/components/ItemUploadingBlock";
+    import FormModeInput from "@/components/FormModeInput";
 
     export default {
         name: "VueUploader",
         components: {
+          FormModeInput,
             ItemUploadingBlock,
             UploadBlock,
             ItemBlock,
