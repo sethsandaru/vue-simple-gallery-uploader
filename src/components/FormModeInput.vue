@@ -2,14 +2,14 @@
     <div>
         <input :key="fileInfo.fileId"
                :value="fileInfo.fileId"
-               name="files[]"
+               :name="fileIdName + '[]'"
                type="hidden"
                v-for="fileInfo in fileInfoArray"
         >
 
         <input :key="fileInfo.fileURL"
                :value="fileInfo.fileURL"
-               name="urls[]"
+               :name="fileUrlName + '[]'"
                type="hidden"
                v-for="fileInfo in fileInfoArray"
         >
@@ -21,6 +21,8 @@
         name: "FormModeInput",
         props: {
             fileInfoArray: Array,
+            fileIdName: String,
+            fileUrlName: String
         }
     }
 </script>

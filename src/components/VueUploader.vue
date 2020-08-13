@@ -34,7 +34,9 @@
 
         <FormModeInput
             v-if="formMode"
-           :file-info-array="value"
+            :file-info-array="value"
+            :file-id-name="fieldIdName"
+            :file-url-name="fieldUrlName"
         />
     </div>
 </template>
@@ -49,7 +51,7 @@
     export default {
         name: "VueUploader",
         components: {
-          FormModeInput,
+            FormModeInput,
             ItemUploadingBlock,
             UploadBlock,
             ItemBlock,
@@ -73,6 +75,22 @@
             formMode: {
                 type: Boolean,
                 default: false
+            },
+
+            /**
+             * [FormMode Only] `name` of the IDs field
+             */
+            fieldIdName: {
+                type: String,
+                default: "files"
+            },
+
+            /**
+             * [FormMode Only] `name` of the URLs field
+             */
+            fieldUrlName: {
+                type: String,
+                default: "urls"
             },
 
             /**
@@ -106,6 +124,26 @@
                 })
             },
 
+            /**
+             * How many items can be showed up in a row?
+             */
+            numberOfItemsInRow: {
+                type: Number,
+                default: 4
+            },
+
+            /**
+             * Max-height of an item-block.
+             * Pixed-height
+             */
+            itemMaxHeight: {
+                type: Number,
+                default: 250,
+            },
+
+            /**
+             * V-Model purpose
+             */
             value: Array,
         },
 
@@ -133,19 +171,19 @@
 
         methods: {
             /**
+             * Set Value for the current state
+             * @param val
+             */
+            setValue(val) {
+                this.$emit('change', val)
+            },
+
+            /**
              * Delete the File out of the Gallery
              */
             doDeleteFile(fileIndex) {
                 this.value.splice(fileIndex, 1)
                 this.setValue(this.value)
-            },
-
-            /**
-             * Set Value for the current state
-             * @param val
-             */
-            setValue(val) {
-                this.$emit('change', val);
             },
 
             /**
