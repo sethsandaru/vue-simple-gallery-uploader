@@ -3,9 +3,8 @@
   "version": "0.1.2",
   "private": false,
   "author": {
-    "email": "phattranminh96@gmail.com",
-    "name": "Seth Phat",
-    "url": "https://github.com/sethsandaru"
+    "email": "me@sethphat.com",
+    "name": "Seth Phat"
   },
   "main": "./dist/vue-uploader.umd.min.js",
   "scripts": {
